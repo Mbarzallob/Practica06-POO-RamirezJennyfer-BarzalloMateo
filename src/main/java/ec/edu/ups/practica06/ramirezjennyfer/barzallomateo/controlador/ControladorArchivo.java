@@ -4,10 +4,51 @@
  */
 package ec.edu.ups.practica06.ramirezjennyfer.barzallomateo.controlador;
 
+import java.io.File;
+import java.io.IOException;
+
 /**
  *
  * @author SOPORTETICS
  */
 public class ControladorArchivo {
+
+    public ControladorArchivo() {
+    }
+
+    public boolean crearArchivo(String url, String nombre) {
+        try {
+            String urlFinal = url + "/" + nombre + ".txt";
+            File archivo = new File(urlFinal);
+            archivo.createNewFile();
+            return true;
+
+        } catch (IOException e) {
+            return false;
+        }
+    }
+
+    public void eliminarArchivo(String url) {
+
+        File archivo = new File(url);
+        if (archivo.isDirectory()) {
+            File[] archivos = archivo.listFiles();
+            if (archivos != null) {
+                for (File ar : archivos) {
+                    eliminarArchivo(ar.getAbsolutePath());
+                }
+            }
+        }
+        archivo.delete();
+
+    }
+
+    public void renombrarArchivo(String url, String aRenombrar, String renombrar) {
+        File archivoR = new File(url+"/"+aRenombrar+".txt");
+        File archivoD = new File(url+"/"+renombrar+".txt");
+        
+        archivoR.renameTo(archivoD);
+    }
+    
     
 }
