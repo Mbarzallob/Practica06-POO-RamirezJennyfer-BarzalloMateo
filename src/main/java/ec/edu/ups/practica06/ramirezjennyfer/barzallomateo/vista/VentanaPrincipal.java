@@ -5,8 +5,13 @@
 package ec.edu.ups.practica06.ramirezjennyfer.barzallomateo.vista;
 
 import java.io.File;
+import java.text.DateFormat;
+import java.text.DecimalFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import javax.swing.tree.DefaultMutableTreeNode;
 import javax.swing.tree.DefaultTreeModel;
+import javax.swing.tree.TreeNode;
 
 /**
  *
@@ -43,6 +48,11 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
+        txtPath = new javax.swing.JTextField();
+        txtTamano = new javax.swing.JTextField();
+        txtPermisosLectura = new javax.swing.JTextField();
+        txtPermisosEscritura = new javax.swing.JTextField();
+        txtUltimaModificacion = new javax.swing.JTextField();
         btnListarDirectorios = new javax.swing.JButton();
         btnListarArchivos = new javax.swing.JButton();
         btnListarArchivosOcultos = new javax.swing.JButton();
@@ -91,13 +101,30 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(24, 24, 24)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel7)
-                    .addComponent(jLabel6)
-                    .addComponent(jLabel5)
-                    .addComponent(jLabel4)
-                    .addComponent(jLabel3)
-                    .addComponent(jLabel2))
-                .addContainerGap(188, Short.MAX_VALUE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(jLabel3)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(txtPath, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(27, 27, 27))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(jLabel4)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(txtTamano, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(35, 35, 35))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel7)
+                            .addComponent(jLabel6)
+                            .addComponent(jLabel5)
+                            .addComponent(jLabel2))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txtPermisosLectura, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtPermisosEscritura, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGap(6, 6, 6)
+                                .addComponent(txtUltimaModificacion, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(23, 23, 23))))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -105,15 +132,25 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                 .addGap(15, 15, 15)
                 .addComponent(jLabel2)
                 .addGap(18, 18, 18)
-                .addComponent(jLabel3)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel3)
+                    .addComponent(txtPath, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel4)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel4)
+                    .addComponent(txtTamano, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel5)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel5)
+                    .addComponent(txtPermisosLectura, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel6)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel6)
+                    .addComponent(txtPermisosEscritura, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel7)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel7)
+                    .addComponent(txtUltimaModificacion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(31, Short.MAX_VALUE))
         );
 
@@ -282,9 +319,9 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_exitMenuItemActionPerformed
 
     private void btnTodoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTodoActionPerformed
-
+        
         String url = txtRuta.getText();
-        DefaultMutableTreeNode raiz = new DefaultMutableTreeNode("Archivos");
+        DefaultMutableTreeNode raiz = new DefaultMutableTreeNode(url);
         DefaultTreeModel treeModel = new DefaultTreeModel(raiz);
         treePruebas.setModel(treeModel);
         agregarCarpetasYArchivos(url, raiz, 0);
@@ -293,7 +330,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
     private void btnListarDirectoriosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnListarDirectoriosActionPerformed
         String url = txtRuta.getText();
-        DefaultMutableTreeNode raiz = new DefaultMutableTreeNode("Archivos");
+        DefaultMutableTreeNode raiz = new DefaultMutableTreeNode(url);
         DefaultTreeModel treeModel = new DefaultTreeModel(raiz);
         treePruebas.setModel(treeModel);
         agregarCarpetasYArchivos(url, raiz, 1);
@@ -301,7 +338,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
     private void btnListarArchivosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnListarArchivosActionPerformed
         String url = txtRuta.getText();
-        DefaultMutableTreeNode raiz = new DefaultMutableTreeNode("Archivos");
+        DefaultMutableTreeNode raiz = new DefaultMutableTreeNode(url);
         DefaultTreeModel treeModel = new DefaultTreeModel(raiz);
         treePruebas.setModel(treeModel);
         agregarCarpetasYArchivos(url, raiz, 2);
@@ -309,7 +346,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
     private void btnListarArchivosOcultosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnListarArchivosOcultosActionPerformed
         String url = txtRuta.getText();
-        DefaultMutableTreeNode raiz = new DefaultMutableTreeNode("Archivos");
+        DefaultMutableTreeNode raiz = new DefaultMutableTreeNode(url);
         DefaultTreeModel treeModel = new DefaultTreeModel(raiz);
         treePruebas.setModel(treeModel);
         agregarCarpetasYArchivos(url, raiz, 4);
@@ -317,14 +354,37 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
     private void btnListarDirectoriosOcultosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnListarDirectoriosOcultosActionPerformed
         String url = txtRuta.getText();
-        DefaultMutableTreeNode raiz = new DefaultMutableTreeNode("Archivos");
+        DefaultMutableTreeNode raiz = new DefaultMutableTreeNode(url);
         DefaultTreeModel treeModel = new DefaultTreeModel(raiz);
         treePruebas.setModel(treeModel);
         agregarCarpetasYArchivos(url, raiz, 3);
     }//GEN-LAST:event_btnListarDirectoriosOcultosActionPerformed
 
     private void btnMostrarInformacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMostrarInformacionActionPerformed
-        // TODO add your handling code here:
+        DefaultMutableTreeNode nodoSeleccionado = (DefaultMutableTreeNode) treePruebas.getLastSelectedPathComponent();
+        TreeNode[] si = nodoSeleccionado.getPath();
+        String path = "";
+        for (TreeNode treeNode : si) {
+            path = path + "/" + treeNode;
+        }
+        String pathF = path.substring(1);
+        txtPath.setText(pathF);
+        File archivo = new File(pathF);
+        txtTamano.setText(formatearTamañoArchivo(archivo.length()));
+        if (archivo.canRead()) {
+            txtPermisosLectura.setText("Puede leer");
+        } else {
+            txtPermisosLectura.setText("No puede leer");
+        }
+        if (archivo.canWrite()) {
+            txtPermisosEscritura.setText("Puede escribir");
+        } else {
+            txtPermisosEscritura.setText("No puede escribir");
+        }
+        Date yourDate = new Date(archivo.lastModified());
+        DateFormat formatter = new SimpleDateFormat("dd-MM-yyyy hh-MM-ss");
+        String formattedDate = formatter.format(yourDate);
+        txtUltimaModificacion.setText(formattedDate);
     }//GEN-LAST:event_btnMostrarInformacionActionPerformed
 
     private void menuItemCrearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuItemCrearActionPerformed
@@ -374,7 +434,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             }
         });
     }
-
+    
     private void agregarCarpetasYArchivos(String ruta, DefaultMutableTreeNode nodoPadre, int opcion) {
         File archivo = new File(ruta);
         File[] elementos = archivo.listFiles();
@@ -383,12 +443,12 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                 if (opcion == 0) {
                     DefaultMutableTreeNode nodo = new DefaultMutableTreeNode(elemento.getName());
                     nodoPadre.add(nodo);
-
+                    
                     if (elemento.isDirectory()) {
                         agregarCarpetasYArchivos(elemento.getAbsolutePath(), nodo, 0);
                     }
                 } else if (opcion == 1) {
-
+                    
                     if (elemento.isDirectory()) {
                         DefaultMutableTreeNode nodo = new DefaultMutableTreeNode(elemento.getName());
                         nodoPadre.add(nodo);
@@ -401,15 +461,15 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                         agregarCarpetasYArchivos(elemento.getAbsolutePath(), nodo, 2);
                     }
                 } else if (opcion == 3) {
-                    if (elemento.isDirectory()&& elemento.isHidden()) {
-
+                    if (elemento.isDirectory() && elemento.isHidden()) {
+                        
                         DefaultMutableTreeNode nodo = new DefaultMutableTreeNode(elemento.getName());
                         nodoPadre.add(nodo);
                         agregarCarpetasYArchivos(elemento.getAbsolutePath(), nodo, 3);
                     }
-                }else if(opcion == 4){
+                } else if (opcion == 4) {
                     if (elemento.isFile() && elemento.isHidden()) {
-
+                        
                         DefaultMutableTreeNode nodo = new DefaultMutableTreeNode(elemento.getName());
                         nodoPadre.add(nodo);
                         agregarCarpetasYArchivos(elemento.getAbsolutePath(), nodo, 4);
@@ -417,6 +477,27 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                 }
             }
         }
+    }
+    
+    public String formatearTamañoArchivo(long tamañoEnBytes) {
+        if (tamañoEnBytes < 1024) {
+            return tamañoEnBytes + " bytes";
+        } else if (tamañoEnBytes < 1024 * 1024) {
+            double tamañoEnKB = tamañoEnBytes / 1024.0;
+            return formatearDecimal(tamañoEnKB) + " KB";
+        } else if (tamañoEnBytes < 1024 * 1024 * 1024) {
+            double tamañoEnMB = tamañoEnBytes / (1024.0 * 1024);
+            return formatearDecimal(tamañoEnMB) + " MB";
+        } else {
+            double tamañoEnGB = tamañoEnBytes / (1024.0 * 1024 * 1024);
+            return formatearDecimal(tamañoEnGB) + " GB";
+        }
+        
+    }
+
+    public String formatearDecimal(double número) {
+        DecimalFormat formato = new DecimalFormat("#.##");
+        return formato.format(número);
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnListarArchivos;
@@ -442,7 +523,12 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenuItem menuItemEliminar;
     private javax.swing.JMenuItem menuItemRenombrar;
     private javax.swing.JTree treePruebas;
+    private javax.swing.JTextField txtPath;
+    private javax.swing.JTextField txtPermisosEscritura;
+    private javax.swing.JTextField txtPermisosLectura;
     private javax.swing.JTextField txtRuta;
+    private javax.swing.JTextField txtTamano;
+    private javax.swing.JTextField txtUltimaModificacion;
     // End of variables declaration//GEN-END:variables
 
 }
