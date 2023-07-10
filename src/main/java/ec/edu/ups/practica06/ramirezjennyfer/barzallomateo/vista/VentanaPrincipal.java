@@ -4,11 +4,13 @@
  */
 package ec.edu.ups.practica06.ramirezjennyfer.barzallomateo.vista;
 
+import ec.edu.ups.practica06.ramirezjennyfer.barzallomateo.controlador.ControladorArchivo;
 import java.io.File;
 import java.text.DateFormat;
 import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import javax.swing.JOptionPane;
 import javax.swing.tree.DefaultMutableTreeNode;
 import javax.swing.tree.DefaultTreeModel;
 import javax.swing.tree.TreeNode;
@@ -19,11 +21,14 @@ import javax.swing.tree.TreeNode;
  */
 public class VentanaPrincipal extends javax.swing.JFrame {
 
+    private ControladorArchivo controladorArchivo;
+
     /**
      * Creates new form VentanaPrincipalo
      */
     public VentanaPrincipal() {
         initComponents();
+        controladorArchivo = new ControladorArchivo();
     }
 
     /**
@@ -94,37 +99,46 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
         jLabel7.setText("Fecha ultima modificacion:");
 
+        txtPath.setEnabled(false);
+
+        txtTamano.setEnabled(false);
+
+        txtPermisosLectura.setEnabled(false);
+
+        txtPermisosEscritura.setEnabled(false);
+
+        txtUltimaModificacion.setEnabled(false);
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(24, 24, 24)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jLabel3)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(txtPath, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(27, 27, 27))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jLabel4)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(txtTamano, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(35, 35, 35))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel7)
                             .addComponent(jLabel6)
                             .addComponent(jLabel5)
                             .addComponent(jLabel2))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtPermisosLectura, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtPermisosEscritura, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGap(6, 6, 6)
-                                .addComponent(txtUltimaModificacion, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(23, 23, 23))))
+                                .addGap(21, 21, 21)
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(txtTamano)
+                                    .addComponent(txtPermisosLectura)
+                                    .addComponent(txtPath)
+                                    .addComponent(txtPermisosEscritura)))
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGap(24, 24, 24)
+                                .addComponent(txtUltimaModificacion, javax.swing.GroupLayout.DEFAULT_SIZE, 247, Short.MAX_VALUE))))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.LEADING))
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addGap(14, 14, 14))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -199,9 +213,8 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(6, 6, 6)
                         .addComponent(jScrollPane1)
-                        .addGap(18, 18, 18)
-                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(71, 71, 71))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(btnTodo)
                         .addComponent(btnListarDirectorios)
@@ -319,7 +332,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_exitMenuItemActionPerformed
 
     private void btnTodoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTodoActionPerformed
-        
+
         String url = txtRuta.getText();
         DefaultMutableTreeNode raiz = new DefaultMutableTreeNode(url);
         DefaultTreeModel treeModel = new DefaultTreeModel(raiz);
@@ -388,15 +401,34 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_btnMostrarInformacionActionPerformed
 
     private void menuItemCrearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuItemCrearActionPerformed
-        // TODO add your handling code here:
+        String nombre = JOptionPane.showInputDialog("Ingrese el nombre del archivo a crear");
+        String url = txtRuta.getText();
+        System.out.println(nombre);
+        controladorArchivo.crearArchivo(url, nombre);
     }//GEN-LAST:event_menuItemCrearActionPerformed
 
     private void menuItemEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuItemEliminarActionPerformed
-        // TODO add your handling code here:
+        DefaultMutableTreeNode nodoSeleccionado = (DefaultMutableTreeNode) treePruebas.getLastSelectedPathComponent();
+        TreeNode[] si = nodoSeleccionado.getPath();
+        String path = "";
+        for (TreeNode treeNode : si) {
+            path = path + "/" + treeNode;
+        }
+        String pathF = path.substring(1);
+        controladorArchivo.eliminarArchivo(pathF);
+        JOptionPane.showMessageDialog(this, "Se ha eliminado el archivo");
     }//GEN-LAST:event_menuItemEliminarActionPerformed
 
     private void menuItemRenombrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuItemRenombrarActionPerformed
-        // TODO add your handling code here:
+        String nombre = JOptionPane.showInputDialog("Ingrese el nombre a renombrar");
+        DefaultMutableTreeNode nodoSeleccionado = (DefaultMutableTreeNode) treePruebas.getLastSelectedPathComponent();
+        TreeNode[] si = nodoSeleccionado.getPath();
+        String path = "";
+        for (TreeNode treeNode : si) {
+            path = path + "/" + treeNode;
+        }
+        String pathF = path.substring(1);
+        controladorArchivo.renombrarArchivo(path, nombre, nombre);
     }//GEN-LAST:event_menuItemRenombrarActionPerformed
 
     /**
@@ -434,7 +466,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             }
         });
     }
-    
+
     private void agregarCarpetasYArchivos(String ruta, DefaultMutableTreeNode nodoPadre, int opcion) {
         File archivo = new File(ruta);
         File[] elementos = archivo.listFiles();
@@ -443,12 +475,12 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                 if (opcion == 0) {
                     DefaultMutableTreeNode nodo = new DefaultMutableTreeNode(elemento.getName());
                     nodoPadre.add(nodo);
-                    
+
                     if (elemento.isDirectory()) {
                         agregarCarpetasYArchivos(elemento.getAbsolutePath(), nodo, 0);
                     }
                 } else if (opcion == 1) {
-                    
+
                     if (elemento.isDirectory()) {
                         DefaultMutableTreeNode nodo = new DefaultMutableTreeNode(elemento.getName());
                         nodoPadre.add(nodo);
@@ -462,14 +494,14 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                     }
                 } else if (opcion == 3) {
                     if (elemento.isDirectory() && elemento.isHidden()) {
-                        
+
                         DefaultMutableTreeNode nodo = new DefaultMutableTreeNode(elemento.getName());
                         nodoPadre.add(nodo);
                         agregarCarpetasYArchivos(elemento.getAbsolutePath(), nodo, 3);
                     }
                 } else if (opcion == 4) {
                     if (elemento.isFile() && elemento.isHidden()) {
-                        
+
                         DefaultMutableTreeNode nodo = new DefaultMutableTreeNode(elemento.getName());
                         nodoPadre.add(nodo);
                         agregarCarpetasYArchivos(elemento.getAbsolutePath(), nodo, 4);
@@ -478,7 +510,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             }
         }
     }
-    
+
     public String formatearTamañoArchivo(long tamañoEnBytes) {
         if (tamañoEnBytes < 1024) {
             return tamañoEnBytes + " bytes";
@@ -492,7 +524,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             double tamañoEnGB = tamañoEnBytes / (1024.0 * 1024 * 1024);
             return formatearDecimal(tamañoEnGB) + " GB";
         }
-        
+
     }
 
     public String formatearDecimal(double número) {
