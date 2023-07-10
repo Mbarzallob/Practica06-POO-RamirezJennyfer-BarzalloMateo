@@ -72,41 +72,68 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        javax.swing.tree.DefaultMutableTreeNode treeNode1 = new javax.swing.tree.DefaultMutableTreeNode("root");
+        jPanel1.setBackground(new java.awt.Color(238, 209, 200));
+
+        treePruebas.setBackground(new java.awt.Color(185, 186, 190));
+        treePruebas.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
+        javax.swing.tree.DefaultMutableTreeNode treeNode1 = new javax.swing.tree.DefaultMutableTreeNode("Archivos");
         treePruebas.setModel(new javax.swing.tree.DefaultTreeModel(treeNode1));
         jScrollPane1.setViewportView(treePruebas);
 
+        btnTodo.setBackground(new java.awt.Color(227, 158, 104));
+        btnTodo.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
+        btnTodo.setForeground(new java.awt.Color(255, 255, 255));
         btnTodo.setText("Buscar todos");
+        btnTodo.setBorderPainted(false);
         btnTodo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnTodoActionPerformed(evt);
             }
         });
 
+        jLabel1.setFont(new java.awt.Font("Verdana", 1, 18)); // NOI18N
         jLabel1.setText("Ruta");
 
-        jPanel2.setBackground(new java.awt.Color(153, 255, 255));
+        txtRuta.setBorder(null);
 
+        jPanel2.setBackground(new java.awt.Color(247, 234, 231));
+
+        jLabel2.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
         jLabel2.setText("Informacion");
 
+        jLabel3.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
         jLabel3.setText("Path absoluto:");
 
+        jLabel4.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
         jLabel4.setText("Tamaño del archivo:");
 
+        jLabel5.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
         jLabel5.setText("Permisos de lectura:");
 
+        jLabel6.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
         jLabel6.setText("Permisos de escritura:");
 
+        jLabel7.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
         jLabel7.setText("Fecha ultima modificacion:");
 
+        txtPath.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
+        txtPath.setBorder(null);
         txtPath.setEnabled(false);
 
+        txtTamano.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
+        txtTamano.setBorder(null);
         txtTamano.setEnabled(false);
 
+        txtPermisosLectura.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
+        txtPermisosLectura.setBorder(null);
         txtPermisosLectura.setEnabled(false);
 
+        txtPermisosEscritura.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
+        txtPermisosEscritura.setBorder(null);
         txtPermisosEscritura.setEnabled(false);
 
+        txtUltimaModificacion.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
+        txtUltimaModificacion.setBorder(null);
         txtUltimaModificacion.setEnabled(false);
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -114,31 +141,27 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(24, 24, 24)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(24, 24, 24)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel7)
                             .addComponent(jLabel6)
                             .addComponent(jLabel5)
-                            .addComponent(jLabel2))
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGap(21, 21, 21)
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(txtTamano)
-                                    .addComponent(txtPermisosLectura)
-                                    .addComponent(txtPath)
-                                    .addComponent(txtPermisosEscritura)))
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGap(24, 24, 24)
-                                .addComponent(txtUltimaModificacion, javax.swing.GroupLayout.DEFAULT_SIZE, 247, Short.MAX_VALUE))))
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.LEADING))
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addGap(14, 14, 14))
+                            .addComponent(jLabel2)
+                            .addComponent(jLabel3)
+                            .addComponent(jLabel4))
+                        .addGap(38, 38, 38))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel7)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)))
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(txtTamano)
+                    .addComponent(txtPermisosLectura)
+                    .addComponent(txtPath)
+                    .addComponent(txtPermisosEscritura)
+                    .addComponent(txtUltimaModificacion))
+                .addGap(12, 12, 12))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -146,9 +169,9 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                 .addGap(15, 15, 15)
                 .addComponent(jLabel2)
                 .addGap(18, 18, 18)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel3)
-                    .addComponent(txtPath, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtPath, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
@@ -158,45 +181,67 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                     .addComponent(jLabel5)
                     .addComponent(txtPermisosLectura, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel6)
-                    .addComponent(txtPermisosEscritura, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel7)
-                    .addComponent(txtUltimaModificacion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtPermisosEscritura, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(txtUltimaModificacion, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel7))
                 .addContainerGap(31, Short.MAX_VALUE))
         );
 
+        jPanel2Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {txtPath, txtPermisosEscritura, txtPermisosLectura, txtTamano, txtUltimaModificacion});
+
+        btnListarDirectorios.setBackground(new java.awt.Color(227, 158, 104));
+        btnListarDirectorios.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
+        btnListarDirectorios.setForeground(new java.awt.Color(255, 255, 255));
         btnListarDirectorios.setText("Listar directorios");
+        btnListarDirectorios.setBorderPainted(false);
         btnListarDirectorios.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnListarDirectoriosActionPerformed(evt);
             }
         });
 
+        btnListarArchivos.setBackground(new java.awt.Color(227, 158, 104));
+        btnListarArchivos.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
+        btnListarArchivos.setForeground(new java.awt.Color(255, 255, 255));
         btnListarArchivos.setText("Listar archivos");
+        btnListarArchivos.setBorderPainted(false);
         btnListarArchivos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnListarArchivosActionPerformed(evt);
             }
         });
 
+        btnListarArchivosOcultos.setBackground(new java.awt.Color(227, 158, 104));
+        btnListarArchivosOcultos.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
+        btnListarArchivosOcultos.setForeground(new java.awt.Color(255, 255, 255));
         btnListarArchivosOcultos.setText("Listar archivos ocultos");
+        btnListarArchivosOcultos.setBorderPainted(false);
         btnListarArchivosOcultos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnListarArchivosOcultosActionPerformed(evt);
             }
         });
 
+        btnListarDirectoriosOcultos.setBackground(new java.awt.Color(227, 158, 104));
+        btnListarDirectoriosOcultos.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
+        btnListarDirectoriosOcultos.setForeground(new java.awt.Color(255, 255, 255));
         btnListarDirectoriosOcultos.setText("Listar directorios ocultos");
+        btnListarDirectoriosOcultos.setBorderPainted(false);
         btnListarDirectoriosOcultos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnListarDirectoriosOcultosActionPerformed(evt);
             }
         });
 
+        btnMostrarInformacion.setBackground(new java.awt.Color(227, 158, 104));
+        btnMostrarInformacion.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
+        btnMostrarInformacion.setForeground(new java.awt.Color(255, 255, 255));
         btnMostrarInformacion.setText("Mostrar informacion");
+        btnMostrarInformacion.setBorderPainted(false);
         btnMostrarInformacion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnMostrarInformacionActionPerformed(evt);
@@ -211,61 +256,61 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(6, 6, 6)
-                        .addComponent(jScrollPane1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(btnTodo)
-                        .addComponent(btnListarDirectorios)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnListarArchivos)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnListarDirectoriosOcultos)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 261, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(btnListarArchivosOcultos)
-                        .addContainerGap(107, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(txtRuta, javax.swing.GroupLayout.PREFERRED_SIZE, 358, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(149, 149, 149))))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(248, 248, 248)
-                .addComponent(btnMostrarInformacion)
-                .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel1)
-                .addGap(313, 313, 313))
+                        .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btnMostrarInformacion)
+                            .addComponent(txtRuta, javax.swing.GroupLayout.PREFERRED_SIZE, 358, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel1)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(btnTodo)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(btnListarDirectorios)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(btnListarArchivos)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(btnListarDirectoriosOcultos)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(btnListarArchivosOcultos)))
+                        .addGap(0, 230, Short.MAX_VALUE)))
+                .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(42, 42, 42)
+                .addContainerGap(27, Short.MAX_VALUE)
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txtRuta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(btnTodo)
-                            .addComponent(btnListarDirectorios)
-                            .addComponent(btnListarArchivos)
-                            .addComponent(btnListarArchivosOcultos)
-                            .addComponent(btnListarDirectoriosOcultos))
-                        .addGap(18, 18, 18)
-                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addComponent(txtRuta, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnTodo)
+                    .addComponent(btnListarDirectorios)
+                    .addComponent(btnListarArchivos)
+                    .addComponent(btnListarArchivosOcultos)
+                    .addComponent(btnListarDirectoriosOcultos))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnMostrarInformacion)
                 .addGap(13, 13, 13))
         );
 
+        menuBar.setBackground(new java.awt.Color(139, 138, 143));
+
+        fileMenu.setBackground(new java.awt.Color(139, 138, 143));
+        fileMenu.setBorder(null);
         fileMenu.setMnemonic('f');
         fileMenu.setText("Gestionar directorio");
+        fileMenu.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
 
         menuItemCrear.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_N, java.awt.event.InputEvent.CTRL_DOWN_MASK));
+        menuItemCrear.setBackground(new java.awt.Color(139, 138, 143));
+        menuItemCrear.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
         menuItemCrear.setMnemonic('o');
         menuItemCrear.setText("Crear");
         menuItemCrear.addActionListener(new java.awt.event.ActionListener() {
@@ -276,6 +321,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         fileMenu.add(menuItemCrear);
 
         menuItemEliminar.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_E, java.awt.event.InputEvent.CTRL_DOWN_MASK));
+        menuItemEliminar.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
         menuItemEliminar.setMnemonic('s');
         menuItemEliminar.setText("Eliminar");
         menuItemEliminar.addActionListener(new java.awt.event.ActionListener() {
@@ -286,6 +332,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         fileMenu.add(menuItemEliminar);
 
         menuItemRenombrar.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_R, java.awt.event.InputEvent.CTRL_DOWN_MASK));
+        menuItemRenombrar.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
         menuItemRenombrar.setMnemonic('a');
         menuItemRenombrar.setText("Renombrar");
         menuItemRenombrar.addActionListener(new java.awt.event.ActionListener() {
@@ -296,6 +343,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         fileMenu.add(menuItemRenombrar);
 
         exitMenuItem.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_ESCAPE, java.awt.event.InputEvent.SHIFT_DOWN_MASK));
+        exitMenuItem.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
         exitMenuItem.setMnemonic('x');
         exitMenuItem.setText("Exit");
         exitMenuItem.addActionListener(new java.awt.event.ActionListener() {
@@ -315,13 +363,11 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 18, Short.MAX_VALUE))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -333,102 +379,197 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
     private void btnTodoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTodoActionPerformed
 
-        String url = txtRuta.getText();
-        DefaultMutableTreeNode raiz = new DefaultMutableTreeNode(url);
-        DefaultTreeModel treeModel = new DefaultTreeModel(raiz);
-        treePruebas.setModel(treeModel);
-        agregarCarpetasYArchivos(url, raiz, 0);
+        if (txtRuta.getText().isEmpty()) {
+            JOptionPane.showMessageDialog(this, "No ha ingresado ningun path");
+        } else {
+            File archivo = new File(txtRuta.getText());
+            if (archivo.exists()) {
+                String url = txtRuta.getText();
+                DefaultMutableTreeNode raiz = new DefaultMutableTreeNode(url);
+                DefaultTreeModel treeModel = new DefaultTreeModel(raiz);
+                treePruebas.setModel(treeModel);
+                agregarCarpetasYArchivos(url, raiz, 0);
+            } else {
+                JOptionPane.showMessageDialog(this, "El archivo no existe");
+            }
 
+        }
     }//GEN-LAST:event_btnTodoActionPerformed
 
     private void btnListarDirectoriosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnListarDirectoriosActionPerformed
-        String url = txtRuta.getText();
-        DefaultMutableTreeNode raiz = new DefaultMutableTreeNode(url);
-        DefaultTreeModel treeModel = new DefaultTreeModel(raiz);
-        treePruebas.setModel(treeModel);
-        agregarCarpetasYArchivos(url, raiz, 1);
+        if (txtRuta.getText().isEmpty()) {
+            JOptionPane.showMessageDialog(this, "No ha ingresado ningun path");
+        } else {
+            File archivo = new File(txtRuta.getText());
+            if (archivo.exists()) {
+                String url = txtRuta.getText();
+                DefaultMutableTreeNode raiz = new DefaultMutableTreeNode(url);
+                DefaultTreeModel treeModel = new DefaultTreeModel(raiz);
+                treePruebas.setModel(treeModel);
+                agregarCarpetasYArchivos(url, raiz, 1);
+            } else {
+                JOptionPane.showMessageDialog(this, "El archivo no existe");
+            }
+
+        }
     }//GEN-LAST:event_btnListarDirectoriosActionPerformed
 
     private void btnListarArchivosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnListarArchivosActionPerformed
-        String url = txtRuta.getText();
-        DefaultMutableTreeNode raiz = new DefaultMutableTreeNode(url);
-        DefaultTreeModel treeModel = new DefaultTreeModel(raiz);
-        treePruebas.setModel(treeModel);
-        agregarCarpetasYArchivos(url, raiz, 2);
+        if (txtRuta.getText().isEmpty()) {
+            JOptionPane.showMessageDialog(this, "No ha ingresado ningun path");
+        } else {
+            File archivo = new File(txtRuta.getText());
+            if (archivo.exists()) {
+                String url = txtRuta.getText();
+                DefaultMutableTreeNode raiz = new DefaultMutableTreeNode(url);
+                DefaultTreeModel treeModel = new DefaultTreeModel(raiz);
+                treePruebas.setModel(treeModel);
+                agregarCarpetasYArchivos(url, raiz, 2);
+            } else {
+                JOptionPane.showMessageDialog(this, "El archivo no existe");
+            }
+
+        }
     }//GEN-LAST:event_btnListarArchivosActionPerformed
 
     private void btnListarArchivosOcultosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnListarArchivosOcultosActionPerformed
-        String url = txtRuta.getText();
-        DefaultMutableTreeNode raiz = new DefaultMutableTreeNode(url);
-        DefaultTreeModel treeModel = new DefaultTreeModel(raiz);
-        treePruebas.setModel(treeModel);
-        agregarCarpetasYArchivos(url, raiz, 4);
+        if (txtRuta.getText().isEmpty()) {
+            JOptionPane.showMessageDialog(this, "No ha ingresado ningun path");
+        } else {
+            File archivo = new File(txtRuta.getText());
+            if (archivo.exists()) {
+                String url = txtRuta.getText();
+                DefaultMutableTreeNode raiz = new DefaultMutableTreeNode(url);
+                DefaultTreeModel treeModel = new DefaultTreeModel(raiz);
+                treePruebas.setModel(treeModel);
+                agregarCarpetasYArchivos(url, raiz, 4);
+            } else {
+                JOptionPane.showMessageDialog(this, "El archivo no existe");
+            }
+
+        }
     }//GEN-LAST:event_btnListarArchivosOcultosActionPerformed
 
     private void btnListarDirectoriosOcultosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnListarDirectoriosOcultosActionPerformed
-        String url = txtRuta.getText();
-        DefaultMutableTreeNode raiz = new DefaultMutableTreeNode(url);
-        DefaultTreeModel treeModel = new DefaultTreeModel(raiz);
-        treePruebas.setModel(treeModel);
-        agregarCarpetasYArchivos(url, raiz, 3);
+        if (txtRuta.getText().isEmpty()) {
+            JOptionPane.showMessageDialog(this, "No ha ingresado ningun path");
+        } else {
+            File archivo = new File(txtRuta.getText());
+            if (archivo.exists()) {
+                String url = txtRuta.getText();
+                DefaultMutableTreeNode raiz = new DefaultMutableTreeNode(url);
+                DefaultTreeModel treeModel = new DefaultTreeModel(raiz);
+                treePruebas.setModel(treeModel);
+                agregarCarpetasYArchivos(url, raiz, 3);
+            } else {
+                JOptionPane.showMessageDialog(this, "El archivo no existe");
+            }
+
+        }
     }//GEN-LAST:event_btnListarDirectoriosOcultosActionPerformed
 
     private void btnMostrarInformacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMostrarInformacionActionPerformed
-        DefaultMutableTreeNode nodoSeleccionado = (DefaultMutableTreeNode) treePruebas.getLastSelectedPathComponent();
-        TreeNode[] si = nodoSeleccionado.getPath();
-        String path = "";
-        for (TreeNode treeNode : si) {
-            path = path + "/" + treeNode;
-        }
-        String pathF = path.substring(1);
-        txtPath.setText(pathF);
-        File archivo = new File(pathF);
-        txtTamano.setText(formatearTamañoArchivo(archivo.length()));
-        if (archivo.canRead()) {
-            txtPermisosLectura.setText("Puede leer");
+        if (treePruebas.getLastSelectedPathComponent() == null) {
+            JOptionPane.showMessageDialog(this, "No se ha seleccionado ningun archivo");
         } else {
-            txtPermisosLectura.setText("No puede leer");
+            DefaultMutableTreeNode nodoSeleccionado = (DefaultMutableTreeNode) treePruebas.getLastSelectedPathComponent();
+
+            TreeNode[] si = nodoSeleccionado.getPath();
+            String path = "";
+            for (TreeNode treeNode : si) {
+                path = path + "/" + treeNode;
+            }
+            String pathF = path.substring(1);
+
+            File archivo = new File(pathF);
+            txtPath.setText(archivo.getAbsolutePath());
+            txtTamano.setText(formatearTamañoArchivo(archivo.length()));
+            if (archivo.canRead()) {
+                txtPermisosLectura.setText("Puede leer");
+            } else {
+                txtPermisosLectura.setText("No puede leer");
+            }
+            if (archivo.canWrite()) {
+                txtPermisosEscritura.setText("Puede escribir");
+            } else {
+                txtPermisosEscritura.setText("No puede escribir");
+            }
+            Date yourDate = new Date(archivo.lastModified());
+            DateFormat formatter = new SimpleDateFormat("dd-MM-yyyy");
+            String formattedDate = formatter.format(yourDate);
+            txtUltimaModificacion.setText(formattedDate);
         }
-        if (archivo.canWrite()) {
-            txtPermisosEscritura.setText("Puede escribir");
-        } else {
-            txtPermisosEscritura.setText("No puede escribir");
-        }
-        Date yourDate = new Date(archivo.lastModified());
-        DateFormat formatter = new SimpleDateFormat("dd-MM-yyyy hh-MM-ss");
-        String formattedDate = formatter.format(yourDate);
-        txtUltimaModificacion.setText(formattedDate);
     }//GEN-LAST:event_btnMostrarInformacionActionPerformed
 
     private void menuItemCrearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuItemCrearActionPerformed
-        String nombre = JOptionPane.showInputDialog("Ingrese el nombre del archivo a crear");
-        String url = txtRuta.getText();
-        System.out.println(nombre);
-        controladorArchivo.crearArchivo(url, nombre);
+        if (txtRuta.getText().isEmpty()) {
+            JOptionPane.showMessageDialog(this, "No ha ingresado ningun path");
+        } else {
+            File archivo = new File(txtRuta.getText());
+            if (archivo.exists()) {
+                String nombre = JOptionPane.showInputDialog("Ingrese el nombre del archivo a crear");
+                String url = txtRuta.getText();
+                controladorArchivo.crearArchivo(url, nombre);
+                btnTodoActionPerformed(evt);
+                JOptionPane.showMessageDialog(this, "Se ha creado el archivo con el nombre: "+nombre);
+            } else {
+                JOptionPane.showMessageDialog(this, "El archivo no existe");
+            }
+
+        }
     }//GEN-LAST:event_menuItemCrearActionPerformed
 
     private void menuItemEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuItemEliminarActionPerformed
-        DefaultMutableTreeNode nodoSeleccionado = (DefaultMutableTreeNode) treePruebas.getLastSelectedPathComponent();
-        TreeNode[] si = nodoSeleccionado.getPath();
-        String path = "";
-        for (TreeNode treeNode : si) {
-            path = path + "/" + treeNode;
+        if (treePruebas.getLastSelectedPathComponent() == null) {
+            JOptionPane.showMessageDialog(this, "No se ha seleccionado ningun archivo");
+        } else {
+            File archivo = new File(txtRuta.getText());
+            if (archivo.exists()) {
+                DefaultMutableTreeNode nodoSeleccionado = (DefaultMutableTreeNode) treePruebas.getLastSelectedPathComponent();
+                TreeNode[] si = nodoSeleccionado.getPath();
+                String path = "";
+                for (TreeNode treeNode : si) {
+                    path = path + "/" + treeNode;
+                }
+                String pathF = path.substring(1);
+                controladorArchivo.eliminarArchivo(pathF);
+                JOptionPane.showMessageDialog(this, "Se ha eliminado el archivo");
+                btnTodoActionPerformed(evt);
+
+            } else {
+                JOptionPane.showMessageDialog(this, "El archivo no existe");
+            }
         }
-        String pathF = path.substring(1);
-        controladorArchivo.eliminarArchivo(pathF);
-        JOptionPane.showMessageDialog(this, "Se ha eliminado el archivo");
     }//GEN-LAST:event_menuItemEliminarActionPerformed
 
     private void menuItemRenombrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuItemRenombrarActionPerformed
-        String nombre = JOptionPane.showInputDialog("Ingrese el nombre a renombrar");
-        DefaultMutableTreeNode nodoSeleccionado = (DefaultMutableTreeNode) treePruebas.getLastSelectedPathComponent();
-        TreeNode[] si = nodoSeleccionado.getPath();
-        String path = "";
-        for (TreeNode treeNode : si) {
-            path = path + "/" + treeNode;
+        if (treePruebas.getLastSelectedPathComponent() == null) {
+            JOptionPane.showMessageDialog(this, "No se ha seleccionado ningun archivo");
+        } else {
+            File archivo = new File(txtRuta.getText());
+            if (archivo.exists()) {
+                String nombre = JOptionPane.showInputDialog("Ingrese el nombre a renombrar");
+                DefaultMutableTreeNode nodoSeleccionado = (DefaultMutableTreeNode) treePruebas.getLastSelectedPathComponent();
+                TreeNode[] si = nodoSeleccionado.getPath();
+                String path = "";
+                String pathRen = "";
+                for (TreeNode treeNode : si) {
+                    path = path + "/" + treeNode;
+                }
+                for (int i = 0; i < si.length - 1; i++) {
+                    pathRen = pathRen + "/" + si[i];
+                }
+                String pathRenF = pathRen.substring(1);
+                String pathF = path.substring(1);
+                controladorArchivo.renombrarArchivo(pathRenF, pathF, nombre);
+                btnTodoActionPerformed(evt);
+                JOptionPane.showConfirmDialog(this, "Se ha renombrado el archivo a: "+nombre);
+
+            } else {
+                JOptionPane.showMessageDialog(this, "El archivo no existe");
+            }
+
         }
-        String pathF = path.substring(1);
-        controladorArchivo.renombrarArchivo(path, nombre, nombre);
     }//GEN-LAST:event_menuItemRenombrarActionPerformed
 
     /**

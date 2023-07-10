@@ -43,12 +43,18 @@ public class ControladorArchivo {
 
     }
 
-    public void renombrarArchivo(String url, String aRenombrar, String renombrar) {
-        File archivoR = new File(url+"/"+aRenombrar+".txt");
-        File archivoD = new File(url+"/"+renombrar+".txt");
-        
-        archivoR.renameTo(archivoD);
+    public void renombrarArchivo(String url, String urlren, String renombrar) {
+
+        File archivoR = new File(urlren);
+        if (archivoR.isDirectory()) {
+            File archivoD = new File(url + "/" + renombrar);
+
+            archivoR.renameTo(archivoD);
+        } else if (archivoR.isFile()) {
+            File archivoD = new File(url + "/" + renombrar + ".txt");
+
+            archivoR.renameTo(archivoD);
+        }
     }
-    
-    
+
 }
